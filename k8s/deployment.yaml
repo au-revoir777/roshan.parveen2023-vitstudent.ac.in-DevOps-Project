@@ -24,7 +24,7 @@ spec:
 
         image: website:latest
 
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
 
         ports:
 
