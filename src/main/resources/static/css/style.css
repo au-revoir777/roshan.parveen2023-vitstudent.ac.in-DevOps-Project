@@ -1,21 +1,290 @@
-body{
-
-font-family:Arial;
-
-margin:0;
-
-padding:20px;
-
-background:#f4f4f4;
-
+/* ==========================================================================
+   1. Design System & Variables
+   ========================================================================== */
+:root {
+    --primary-color: #0066cc;     /* Trustworthy Tech Blue */
+    --secondary-color: #20c997;   /* Modern Teal Accent */
+    --dark-bg: #111827;           /* Deep Navy for Header/Footer */
+    --light-bg: #f8fafc;          /* Off-white background */
+    --card-bg: #ffffff;           /* Pure white for containers */
+    --text-main: #334155;         /* Soft Charcoal for readability */
+    --text-light: #64748b;        /* Muted Gray for subtitles */
+    --text-white: #ffffff;
+    --font-stack: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --transition: all 0.3s ease;
 }
 
-nav a{
+/* ==========================================================================
+   2. Global Resets & Defaults
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-margin-right:15px;
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-main);
+}
 
-text-decoration:none;
+/* ==========================================================================
+   3. Header & Navigation
+   ========================================================================== */
+header {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-font-weight:bold;
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
 
+nav a {
+    color: #cbd5e1;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav a:hover, nav a.active {
+    color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: var(--text-white);
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #93c5fd;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+.btn-primary:hover {
+    background-color: #17a2b8;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--text-white);
+    color: var(--text-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-white);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. Content Sections (Features & Services)
+   ========================================================================== */
+section {
+    padding: 5rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-bg);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* Grids for Features & Services */
+.feature-grid, .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card, .service-item {
+    background-color: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.feature-card:hover, .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.feature-card h3, .service-item h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.feature-card p, .service-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.view-more a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-more a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   6. Testimonial Banner
+   ========================================================================== */
+.testimonial {
+    background-color: #e2e8f0;
+    text-align: center;
+    max-width: 900px;
+    margin: 4rem auto;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+}
+
+.testimonial blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--dark-bg);
+    margin-bottom: 1rem;
+}
+
+.testimonial cite {
+    font-weight: 600;
+    color: var(--text-light);
+    font-style: normal;
+}
+
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
+footer {
+    background-color: var(--dark-bg);
+    color: #94a3b8;
+    padding: 4rem 5% 2rem 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 2rem;
+}
+
+.footer-about h3, .footer-links h4 {
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--text-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   8. Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav a {
+        margin: 0 0.75rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
 }
