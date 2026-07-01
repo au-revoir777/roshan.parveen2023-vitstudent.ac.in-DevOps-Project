@@ -15,7 +15,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t website .'
+                bat 'docker build -t website:latest .'
             }
         }
 
