@@ -1,20 +1,107 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>ABC Technologies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Technologies | Innovating the Future</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<h1>ABC Technologies</h1>
-<nav>
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/services">Services</a>
-<a href="/careers">Careers</a>
-<a href="/gallery">Gallery</a>
-<a href="/contact">Contact</a>
-</nav>
-<h2>Welcome to ABC Technologies</h2>
-<script src="/js/script.js"></script>
+
+    <header>
+        <div class="logo">
+            <h1>ABC Technologies</h1>
+        </div>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/careers">Careers</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Innovating the Future of Technology</h2>
+                <p>We deliver cutting-edge software solutions, cloud architecture, and AI-driven analytics to scale your business into the next generation.</p>
+                <div class="hero-buttons">
+                    <a href="/services" class="btn btn-primary">Our Services</a>
+                    <a href="/contact" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why ABC Technologies?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Innovation First</h3>
+                    <p>We leverage modern frameworks and emerging technologies to keep your business ahead of the curve.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Expert Team</h3>
+                    <p>Our engineers and consultants hold decades of combined experience across various tech stacks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Security Centric</h3>
+                    <p>Data integrity and cybersecurity are baked into every single line of code we write.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-preview">
+            <h2>What We Do</h2>
+            <p class="section-subtitle">Tailored digital solutions to solve complex business problems.</p>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Custom Software Development</h4>
+                    <p>Tailor-made web and mobile applications built for scale and performance.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Cloud Infrastructure</h4>
+                    <p>Seamless migration, management, and optimization for AWS, Azure, and Google Cloud.</p>
+                </div>
+                <div class="service-item">
+                    <h4>AI & Data Analytics</h4>
+                    <p>Turn raw data into actionable intelligence with custom machine learning models.</p>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="/services">View All Services &rarr;</a>
+            </div>
+        </section>
+
+        <section class="testimonial">
+            <blockquote>
+                "ABC Technologies transformed our legacy systems into a modern cloud powerhouse. Their team was professional, responsive, and incredibly knowledgeable."
+            </blockquote>
+            <cite>— Jane Doe, CTO of Nexus Enterprises</cite>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>ABC Technologies</h3>
+                <p>Building tomorrow's enterprise software solutions today.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ABC Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
