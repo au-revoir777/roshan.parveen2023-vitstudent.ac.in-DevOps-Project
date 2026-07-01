@@ -3,13 +3,6 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Clone') {
-            steps {
-                git 'https://github.com/au-revoir777/roshan.parveen2023-vitstudent.ac.in-DevOps-Project.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package'
