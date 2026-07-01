@@ -1,24 +1,28 @@
 pipeline {
 
     agent any
+    tools {
+        jdk 'JDK25'
+        maven 'Maven-3.9.16'
+    }
 
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t website .'
+                bat 'docker build -t website .'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'kubectl apply -f k8s/deployment.yaml'
-                sh 'kubectl apply -f k8s/service.yaml'
+                bat 'kubectl apply -f k8s/deployment.yaml'
+                bat 'kubectl apply -f k8s/service.yaml'
             }
         }
 
