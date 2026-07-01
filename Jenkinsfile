@@ -6,7 +6,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'YOUR_GITHUB_REPO'
+                git 'https://github.com/au-revoir777/roshan.parveen2023-vitstudent.ac.in-DevOps-Project.git'
             }
         }
 
@@ -24,8 +24,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh 'kubectl apply -f k8s/deployment.yaml'
+                sh 'kubectl apply -f k8s/service.yaml'
             }
         }
 
