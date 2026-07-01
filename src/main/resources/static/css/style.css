@@ -1,0 +1,21 @@
+body{
+
+font-family:Arial;
+
+margin:0;
+
+padding:20px;
+
+background:#f4f4f4;
+
+}
+
+nav a{
+
+margin-right:15px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
