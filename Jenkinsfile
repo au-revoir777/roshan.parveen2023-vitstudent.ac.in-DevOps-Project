@@ -21,9 +21,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                bat "kubectl delete deployment website"
+
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
-                bat 'kubectl rollout restart deployment website'
             }
         }
 
