@@ -80,6 +80,10 @@
 
                 <div class="contact-form-panel">
                     <h3>Send a Message</h3>
+                    <div th:if="${success}" class="alert alert-success">
+                        <i data-lucide="check-circle" class="alert-icon"></i>
+                        <span th:text="${success}"></span>
+                    </div>
                     <form action="/contact/submit" method="POST" class="inquiry-form">
                         <div class="form-row-split">
                             <div class="form-group">

@@ -1136,3 +1136,44 @@ footer {
     border-radius: 6px;
     box-sizing: content-box; /* Ensures padding expands outside vector boundaries */
 }
+
+/* ==========================================================================
+   15. Form Success Notification Banners
+   ========================================================================== */
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-success {
+    background-color: #ecfdf5; /* Soft background green tint */
+    border: 1px solid #a7f3d0;  /* Crisp light green borders */
+    color: #065f46;            /* Deep emerald readable text color */
+}
+
+.alert-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #059669; /* Rich green vector accent mapping */
+    stroke-width: 2.5;
+    flex-shrink: 0; /* Prevents icon distortion if message text wraps */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

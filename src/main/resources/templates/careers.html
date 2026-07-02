@@ -101,7 +101,10 @@
             <div class="form-wrapper">
                 <h2>Submit an Application</h2>
                 <p>Don't see a precise fit? Send over your resume anyway—we're constantly looking for exceptional individuals.</p>
-                
+                <div th:if="${success}" class="alert alert-success">
+                    <i data-lucide="check-circle" class="alert-icon"></i>
+                    <span th:text="${success}"></span>
+                </div>
                 <form action="/careers/apply" method="POST" class="careers-form">
                     <div class="form-row-split">
                         <div class="form-group">
