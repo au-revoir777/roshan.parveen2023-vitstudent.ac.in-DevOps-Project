@@ -35,6 +35,12 @@ spec:
           - name: MYSQL_DATABASE
             value: website_db
 
+          - name: MYSQL_USER
+            value: website_user
+
+          - name: MYSQL_PASSWORD
+            value: website_pass
+
         volumeMounts:
           - name: mysql-storage
             mountPath: /var/lib/mysql

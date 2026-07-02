@@ -26,6 +26,8 @@ pipeline {
                 bat 'kubectl apply -f k8s/mysql-service.yaml'
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
+                bat 'kubectl rollout restart deployment website'
+                bat 'kubectl rollout status deployment website --timeout=120s'
             }
         }
 
