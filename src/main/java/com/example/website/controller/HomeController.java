@@ -1,6 +1,9 @@
-package com.example.website;
+package com.example.website.controller;
 
 import com.example.website.dto.*;
+import com.example.website.service.WebsiteService;
+import org.springframework.ui.Model;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,20 +13,35 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class HomeController {
 
+    private final WebsiteService websiteService;
+    public HomeController(WebsiteService websiteService) {
+    this.websiteService = websiteService;
+}
     @GetMapping("/")
     public String home() {
         return "index";
     }
 
     @GetMapping("/about")
-    public String about() {
-        return "about";
-    }
+    public String about(Model model) {
+
+    model.addAttribute(
+            "teamMembers",
+            websiteService.getTeamMembers());
+
+    return "about";
+}
+
 
     @GetMapping("/services")
-    public String services() {
-        return "services";
-    }
+    public String services(Model model) {
+
+    model.addAttribute(
+            "pricing",
+            websiteService.getPricing());
+
+    return "services";
+}
 
     @GetMapping("/careers")
     public String careers() {
@@ -36,8 +54,13 @@ public class HomeController {
     }
 
     @GetMapping("/gallery")
-    public String gallery() {
-        return "gallery";
+    public String gallery(Model model) {
+
+    model.addAttribute(
+            "portfolio",
+            websiteService.getPortfolio());
+
+    return "gallery";
     }
 
     @PostMapping("/careers/apply")

@@ -77,7 +77,7 @@
             <h2>Meet Our Leadership</h2>
             <p class="section-subtitle">The minds driving our strategic technical vision.</p>
             
-            <div class="team-grid">
+            <!-- <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">JD</div>
                     <h4>John Doe</h4>
@@ -92,6 +92,14 @@
                     <div class="team-avatar">SR</div>
                     <h4>Sarah Rogers</h4>
                     <p class="team-role">Head of Cybersecurity</p>
+                </div>
+            </div> -->
+
+            <div class="team-grid">
+                <div th:each="member : ${teamMembers}" class="team-card">
+                    <div class="team-avatar" th:text="${member.initials}">JD</div>
+                    <h4 th:text="${member.fullName}">John Doe</h4>
+                    <p class="team-role" th:text="${member.role}">CEO & Co-Founder</p>
                 </div>
             </div>
         </section>

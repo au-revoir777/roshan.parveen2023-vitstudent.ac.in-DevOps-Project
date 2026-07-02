@@ -76,58 +76,40 @@
 
         <section class="pricing-section">
             <h2>Transparent Pricing Plans</h2>
-            <p class="section-subtitle">Select a engagement tier aligned precisely with your organizational workload requirements.</p>
+            <p class="section-subtitle">Select an engagement tier aligned precisely with your organizational workload requirements.</p>
             
             <div class="pricing-table-container">
                 <table class="pricing-table">
                     <thead>
                         <tr>
                             <th>Feature Offerings</th>
-                            <th>
-                                <span class="tier-name">Startup Tier</span>
-                                <span class="tier-price">$1,499<small>/mo</small></span>
-                            </th>
-                            <th class="highlighted-tier">
-                                <span class="pop-tag">Most Popular</span>
-                                <span class="tier-name">Business Growth</span>
-                                <span class="tier-price">$3,999<small>/mo</small></span>
-                            </th>
-                            <th>
-                                <span class="tier-name">Enterprise Custom</span>
-                                <span class="tier-price">Custom Quote</span>
+                            <th th:each="tier : ${pricing}" th:classappend="${tier.tierName == 'Business Growth'} ? 'highlighted-tier'">
+                                <span th:if="${tier.tierName == 'Business Growth'}" class="pop-tag">Most Popular</span>
+                                <span class="tier-name" th:text="${tier.tierName}">Startup Tier</span>
+                                <span class="tier-price">
+                                    <span th:text="${tier.price}">$1,499</span><small th:if="${tier.price != 'Custom Quote'}">/mo</small>
+                                </span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Dedicated Engineers Assigned</td>
-                            <td>1 Engineer</td>
-                            <td>3 Engineers</td>
-                            <td>Dedicated Team (5+)</td>
-                        </tr>
-                        <tr>
-                            <td>Cloud Infrastructure Audits</td>
-                            <td>Quarterly Reviews</td>
-                            <td>Monthly Optimizations</td>
-                            <td>Continuous 24/7 Monitoring</td>
+                            <td th:each="tier : ${pricing}" th:text="${tier.dedicatedEngineers}">1 Engineer</td>
                         </tr>
                         <tr>
                             <td>SLA Response Guarantee</td>
-                            <td>48-Hour Email Turnaround</td>
-                            <td>12-Hour Priority SLA</td>
-                            <td>1-Hour Critical Incident Response</td>
+                            <td th:each="tier : ${pricing}" th:text="${tier.slaResponse}">48-Hour Email Turnaround</td>
                         </tr>
                         <tr>
-                            <td>Codebase Maintenance & Support</td>
-                            <td>&#10004; Basic Updates</td>
-                            <td>&#10004; Full Support</td>
-                            <td>&#10004; Proactive Refactoring</td>
+                            <td>Codebase Maintenance</td>
+                            <td th:each="tier : ${pricing}" th:text="${tier.maintenanceSupport ?: '✓ Basic Updates'}">✓ Basic Updates</td>
                         </tr>
                         <tr>
                             <td>Action Call Button</td>
-                            <td><a href="/contact" class="btn-table">Get Started</a></td>
-                            <td><a href="/contact" class="btn-table active-btn">Scale Up Now</a></td>
-                            <td><a href="/contact" class="btn-table">Contact Exec</a></td>
+                            <td th:each="tier : ${pricing}">
+                                <a href="/contact" class="btn-table" th:classappend="${tier.tierName == 'Business Growth'} ? 'active-btn'" th:text="${tier.tierName == 'Enterprise Custom'} ? 'Contact Exec' : 'Get Started'">Get Started</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

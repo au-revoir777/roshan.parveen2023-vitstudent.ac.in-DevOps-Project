@@ -32,63 +32,13 @@
         <section class="gallery-section">
             <div class="gallery-grid">
                 
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder project-bg">
-                        <span class="gallery-badge">Project</span>
+                <div th:each="item : ${portfolio}" class="gallery-item-card">
+                    <div class="gallery-image-placeholder" th:classappend="${item.cssClass}">
+                        <span class="gallery-badge" th:text="${item.category}">Project</span>
                     </div>
                     <div class="gallery-item-info">
-                        <h4>Cloud Automation Dashboard</h4>
-                        <p>A custom enterprise UI designed for real-time cluster monitoring and auto-scaling analytics.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder office-bg">
-                        <span class="gallery-badge">Our Space</span>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h4>The Innovation Hub</h4>
-                        <p>Our collaborative physical headquarters engineered for open communication and agile standups.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder mobile-bg">
-                        <span class="gallery-badge">Project</span>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h4>FinTech Mobile Application</h4>
-                        <p>Secure, biometric-authenticated iOS and Android application optimized for high-volume transactions.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder event-bg">
-                        <span class="gallery-badge">Events</span>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h4>Annual Global Hackathon</h4>
-                        <p>Our engineering teams uniting across continents to build prototype features over a 48-hour sprint.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder data-bg">
-                        <span class="gallery-badge">Project</span>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h4>Predictive Logistics Platform</h4>
-                        <p>An AI-powered routing architecture built to dynamically optimize global supply chain shipments.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item-card">
-                    <div class="gallery-image-placeholder team-bg">
-                        <span class="gallery-badge">Culture</span>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h4>Continuous Learning Seminars</h4>
-                        <p>Our weekly internal tech-talks where engineers share findings on new frameworks and security patches.</p>
+                        <h4 th:text="${item.title}">Cloud Automation Dashboard</h4>
+                        <p th:text="${item.description}">A custom enterprise UI designed for real-time cluster monitoring and auto-scaling analytics.</p>
                     </div>
                 </div>
 
