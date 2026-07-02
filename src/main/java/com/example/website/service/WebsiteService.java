@@ -75,19 +75,19 @@ public class WebsiteService {
                         "Cloud Migration",
                         "Migration to AWS infrastructure",
                         "Project",
-                        "blue"),
+                        "project-bg"),
 
                 new PortfolioItem(
                         "Annual Tech Summit",
                         "Company innovation showcase",
                         "Events",
-                        "green"),
+                        "office-bg"),
 
                 new PortfolioItem(
                         "Team Building",
                         "Corporate culture initiatives",
                         "Culture",
-                        "purple")
+                        "mobile-bg")
         );
 
     }
