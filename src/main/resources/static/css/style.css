@@ -1110,3 +1110,29 @@ footer {
         gap: 1.5rem;
     }
 }
+
+/* ==========================================================================
+   14. Lucide Vector Icon Custom Classes
+   ========================================================================== */
+
+/* Styles for icons placed on light card backgrounds */
+.icon-style {
+    width: 40px;
+    height: 40px;
+    stroke: var(--primary-color); /* Matches your tech-blue theme color */
+    stroke-width: 2;             /* Controls line thickness */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Styles for icons inside dark panels (like the contact page sidebar) */
+.icon-style-dark {
+    width: 24px;
+    height: 24px;
+    stroke: var(--secondary-color); /* Matches your modern teal color */
+    stroke-width: 2;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 6px;
+    box-sizing: content-box; /* Ensures padding expands outside vector boundaries */
+}
