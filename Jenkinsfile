@@ -1,30 +1,120 @@
 pipeline {
-
     agent any
     tools {
         jdk 'JDK25'
         maven 'Maven-3.9.16'
     }
 
+    environment {
+        IMAGE_NAME = "website"
+        IMAGE_TAG = "latest"
+    }
+
     stages {
-        stage('Build') {
+
+        stage('Checkout Source Code') {
             steps {
-                bat 'mvn clean package'
+                echo "Checking out source code from GitHub..."
+                git branch: 'main',
+                    url: 'https://github.com/au-revoir777/roshan.parveen2023-vitstudent.ac.in-DevOps-Project.git'
             }
         }
 
-        stage('Docker Build') {
+        stage('Verify Tools') {
             steps {
-                bat 'docker build -t website:latest .'
+                echo "Verifying Java..."
+                bat 'java -version'
+
+                echo "Verifying Maven..."
+                bat 'mvn -version'
+
+                echo "Verifying Docker..."
+                bat 'docker --version'
+
+                echo "Verifying Kubernetes..."
+                bat 'kubectl version --client'
             }
         }
 
-        stage('Deploy') {
+        stage('Clean Project') {
             steps {
-                bat "kubectl delete deployment website"
+                echo "Cleaning project..."
+                bat 'mvn clean'
+            }
+        }
+
+        stage('Compile Project') {
+            steps {
+                echo "Compiling project..."
+                bat 'mvn compile'
+            }
+        }
+
+        stage('Run Unit Tests') {
+            steps {
+                echo "Running unit tests..."
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package Application') {
+            steps {
+                echo "Packaging Spring Boot application..."
+                bat 'mvn package'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo "Building Docker image..."
+                bat 'docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'
+            }
+        }
+
+        stage('List Docker Images') {
+            steps {
+                echo "Available Docker Images"
+                bat 'docker images'
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                echo "Deploying application to Kubernetes..."
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
             }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                echo "Checking Deployment..."
+                bat 'kubectl rollout status deployment/task-manager'
+                bat 'kubectl get deployments'
+                bat 'kubectl get pods'
+                bat 'kubectl get svc'
+            }
+        }
+    }
+
+    post {
+
+        always {
+            echo "Pipeline Finished."
+        }
+
+        success {
+            echo "======================================="
+            echo "BUILD SUCCESSFUL"
+            echo "Application Deployed Successfully"
+            echo "======================================="
+        }
+
+        failure {
+            echo "======================================="
+            echo "BUILD FAILED"
+            echo "Check Jenkins Console Output"
+            echo "======================================="
         }
 
     }
