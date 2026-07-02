@@ -1,95 +1,39 @@
 package com.example.website.service;
 
-import com.example.website.model.*;
-
 import org.springframework.stereotype.Service;
-
+import com.example.website.entity.*;
+import com.example.website.repository.*;
 import java.util.List;
 
 @Service
 public class WebsiteService {
 
+    private final TeamMemberRepository teamRepository;
+
+    private final PricingTierRepository pricingRepository;
+
+    private final PortfolioItemRepository portfolioRepository;
+
+    public WebsiteService(
+            TeamMemberRepository teamRepository,
+            PricingTierRepository pricingRepository,
+            PortfolioItemRepository portfolioRepository) {
+
+        this.teamRepository = teamRepository;
+        this.pricingRepository = pricingRepository;
+        this.portfolioRepository = portfolioRepository;
+    }
+
     public List<TeamMember> getTeamMembers() {
-
-        return List.of(
-
-                new TeamMember(
-                        "John Smith",
-                        "Chief Executive Officer",
-                        "JS"),
-
-                new TeamMember(
-                        "Sarah Johnson",
-                        "Cloud Architect",
-                        "SJ"),
-
-                new TeamMember(
-                        "David Lee",
-                        "Lead Developer",
-                        "DL"),
-
-                new TeamMember(
-                        "Emily Brown",
-                        "DevOps Engineer",
-                        "EB")
-        );
-
+        return teamRepository.findAll();
     }
 
     public List<PricingTier> getPricing() {
-
-        return List.of(
-
-                new PricingTier(
-                        "Starter",
-                        "$499",
-                        "1",
-                        "24 Hours",
-                        "Basic Updates"
-                    ),
-
-                new PricingTier(
-                        "Professional",
-                        "$999",
-                        "3",
-                        "8 Hours",
-                        "Full Support"
-                    ),
-
-                new PricingTier(
-                        "Enterprise",
-                        "Custom",
-                        "Dedicated Team",
-                        "1 Hour",
-                        "Proactive Refactoring"
-                    )
-        );
-
+        return pricingRepository.findAll();
     }
 
     public List<PortfolioItem> getPortfolio() {
-
-        return List.of(
-
-                new PortfolioItem(
-                        "Cloud Migration",
-                        "Migration to AWS infrastructure",
-                        "Project",
-                        "project-bg"),
-
-                new PortfolioItem(
-                        "Annual Tech Summit",
-                        "Company innovation showcase",
-                        "Events",
-                        "office-bg"),
-
-                new PortfolioItem(
-                        "Team Building",
-                        "Corporate culture initiatives",
-                        "Culture",
-                        "mobile-bg")
-        );
-
+        return portfolioRepository.findAll();
     }
 
 }

@@ -1,22 +1,32 @@
 package com.example.website.controller;
 
 import com.example.website.dto.*;
+import com.example.website.entity.CareerApplication;
+import com.example.website.entity.ContactInquiry;
+import com.example.website.repository.*;
 import com.example.website.service.WebsiteService;
 import org.springframework.ui.Model;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 @Controller
 public class HomeController {
 
     private final WebsiteService websiteService;
-    public HomeController(WebsiteService websiteService) {
-    this.websiteService = websiteService;
-}
+    private final CareerApplicationRepository careerRepository;
+    private final ContactInquiryRepository contactRepository;
+
+    public HomeController(WebsiteService websiteService,
+                          CareerApplicationRepository careerRepository,
+                          ContactInquiryRepository contactRepository) {
+        this.websiteService = websiteService;
+        this.careerRepository = careerRepository;
+        this.contactRepository = contactRepository;
+    }
+
     @GetMapping("/")
     public String home() {
         return "index";
@@ -63,32 +73,37 @@ public class HomeController {
     return "gallery";
     }
 
+   
     @PostMapping("/careers/apply")
-    public String applyJob(
-            @ModelAttribute CareerApplicationDto application,
-            RedirectAttributes redirectAttributes) {
+    public String apply(@ModelAttribute CareerApplicationDto dto) {
 
-        System.out.println(application);
+        CareerApplication application =
+                new CareerApplication(
+                        dto.getFullName(),
+                        dto.getEmail(),
+                        dto.getPosition(),
+                        dto.getResume());
 
-        redirectAttributes.addFlashAttribute(
-                "success",
-                "Application submitted successfully!");
+        careerRepository.save(application);
 
-        return "redirect:/careers#apply-form";
+        return "redirect:/careers";
     }
 
+    
     @PostMapping("/contact/submit")
-    public String submitInquiry(
-            @ModelAttribute ContactInquiryDto inquiry,
-            RedirectAttributes redirectAttributes) {
+    public String submit(@ModelAttribute ContactInquiryDto dto) {
 
-        System.out.println(inquiry);
+    ContactInquiry inquiry =
+            new ContactInquiry(
+                    dto.getFirstName(),
+                    dto.getLastName(),
+                    dto.getContactEmail(),
+                    dto.getInquiryType(),
+                    dto.getMessage());
 
-        redirectAttributes.addFlashAttribute(
-                "success",
-                "Your inquiry has been received!");
+    contactRepository.save(inquiry);
 
-        return "redirect:/contact#contact-form";
-    }
+    return "redirect:/contact";
+}
 
 }
