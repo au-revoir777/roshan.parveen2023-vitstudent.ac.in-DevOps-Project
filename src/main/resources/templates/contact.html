@@ -29,7 +29,7 @@
             <p>Have a question or looking to start a new software project? Let's build something exceptional together.</p>
         </section>
 
-        <section class="contact-section">
+        <section class="contact-section" id="contact-form">
             <div class="contact-wrapper">
                 
                 <div class="contact-info-panel">
@@ -84,7 +84,7 @@
                         <i data-lucide="check-circle" class="alert-icon"></i>
                         <span th:text="${success}"></span>
                     </div>
-                    <form action="*" method="POST" class="inquiry-form">
+                    <form action="/contact/contact-form" method="POST" class="inquiry-form">
                         <div class="form-row-split">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
