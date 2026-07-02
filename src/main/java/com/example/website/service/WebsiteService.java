@@ -44,19 +44,25 @@ public class WebsiteService {
                         "Starter",
                         "$499",
                         "1",
-                        "24 Hours"),
+                        "24 Hours",
+                        "Basic Updates"
+                    ),
 
                 new PricingTier(
                         "Professional",
                         "$999",
                         "3",
-                        "8 Hours"),
+                        "8 Hours",
+                        "Full Support"
+                    ),
 
                 new PricingTier(
                         "Enterprise",
                         "Custom",
                         "Dedicated Team",
-                        "1 Hour")
+                        "1 Hour",
+                        "Proactive Refactoring"
+                    )
         );
 
     }
