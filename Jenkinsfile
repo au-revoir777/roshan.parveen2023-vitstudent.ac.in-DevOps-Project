@@ -21,8 +21,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat "kubectl delete deployment website"
-
+                bat 'kubectl apply -f k8s/mysql-pvc.yaml'
+                bat 'kubectl apply -f k8s/mysql-deployment.yaml'
+                bat 'kubectl apply -f k8s/mysql-service.yaml'
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
             }
