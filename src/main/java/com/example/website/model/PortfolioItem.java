@@ -1,25 +1,12 @@
-package com.example.website.entity;
+package com.example.website.model;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
-@Entity
 public class PortfolioItem {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    
     private String title;
     private String description;
     private String category;
     private String cssClass;
-
-    public PortfolioItem(){
-        
-    }
 
     public PortfolioItem(String title,
                          String description,

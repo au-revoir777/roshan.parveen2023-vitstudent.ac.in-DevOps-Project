@@ -1,16 +1,8 @@
-package com.example.website.entity;
+package com.example.website.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity
 public class PricingTier {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String tierName;
     private String price;
@@ -18,9 +10,6 @@ public class PricingTier {
     private String slaResponse;
     private String maintenanceSupport;
 
-    public PricingTier(){
-
-    }
     
     public PricingTier(String tierName,
                        String price,

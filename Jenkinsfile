@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package -DskipTests'
+                bat 'mvn clean package'
             }
         }
 
@@ -21,13 +21,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'kubectl apply -f k8s/mysql-pvc.yaml'
-                bat 'kubectl apply -f k8s/mysql-deployment.yaml'
-                bat 'kubectl apply -f k8s/mysql-service.yaml'
+                bat "kubectl delete deployment website"
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
-                bat 'kubectl rollout restart deployment website'
-                bat 'kubectl rollout status deployment website --timeout=120s'
             }
         }
 

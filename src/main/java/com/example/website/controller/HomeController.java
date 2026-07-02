@@ -1,9 +1,6 @@
 package com.example.website.controller;
 
 import com.example.website.dto.*;
-import com.example.website.entity.CareerApplication;
-import com.example.website.entity.ContactInquiry;
-import com.example.website.repository.*;
 import com.example.website.service.WebsiteService;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
@@ -17,15 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class HomeController {
 
     private final WebsiteService websiteService;
-    private final CareerApplicationRepository careerRepository;
-    private final ContactInquiryRepository contactRepository;
 
-    public HomeController(WebsiteService websiteService,
-                          CareerApplicationRepository careerRepository,
-                          ContactInquiryRepository contactRepository) {
+    public HomeController(WebsiteService websiteService) {
         this.websiteService = websiteService;
-        this.careerRepository = careerRepository;
-        this.contactRepository = contactRepository;
     }
 
     @GetMapping("/")
@@ -76,36 +67,32 @@ public class HomeController {
 
    
     @PostMapping("/careers/apply")
-    public String apply(@ModelAttribute CareerApplicationDto dto,
-        RedirectAttributes redirectAttributes) {
+    public String applyJob(
+            @ModelAttribute CareerApplicationDto application,
+            RedirectAttributes redirectAttributes) {
 
-        CareerApplication application =
-                new CareerApplication(
-                        dto.getFullName(),
-                        dto.getEmail(),
-                        dto.getPosition(),
-                        dto.getResume());
+        System.out.println(application);
 
-        careerRepository.save(application);
+        redirectAttributes.addFlashAttribute(
+                "success",
+                "Application submitted successfully!");
 
         return "redirect:/careers";
     }
 
     
     @PostMapping("/contact/submit")
-    public String submit(@ModelAttribute ContactInquiryDto dto, RedirectAttributes redirectAttributes) {
+    public String submitInquiry(
+            @ModelAttribute ContactInquiryDto inquiry,
+            RedirectAttributes redirectAttributes) {
 
-    ContactInquiry inquiry =
-            new ContactInquiry(
-                    dto.getFirstName(),
-                    dto.getLastName(),
-                    dto.getContactEmail(),
-                    dto.getInquiryType(),
-                    dto.getMessage());
+        System.out.println(inquiry);
 
-    contactRepository.save(inquiry);
+        redirectAttributes.addFlashAttribute(
+                "success",
+                "Your inquiry has been received!");
 
-    return "redirect:/contact";
+        return "redirect:/contact";
+    }
 }
 
-}
