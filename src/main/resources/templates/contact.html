@@ -29,7 +29,7 @@
             <p>Have a question or looking to start a new software project? Let's build something exceptional together.</p>
         </section>
 
-        <section class="contact-section" id="contact-form">
+        <section class="contact-section">
             <div class="contact-wrapper">
                 
                 <div class="contact-info-panel">
@@ -78,13 +78,13 @@
                     </div>
                 </div>
 
-                <div class="contact-form-panel">
+                <div class="contact-form-panel" id="contact-form">
                     <h3>Send a Message</h3>
                     <div th:if="${success}" class="alert alert-success">
                         <i data-lucide="check-circle" class="alert-icon"></i>
                         <span th:text="${success}"></span>
                     </div>
-                    <form action="/contact/contact-form" method="POST" class="inquiry-form">
+                    <form action="/contact/submit" method="POST" class="inquiry-form">
                         <div class="form-row-split">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>

@@ -51,7 +51,7 @@ public class HomeController {
                 "success",
                 "Application submitted successfully!");
 
-        return "redirect:/careers";
+        return "redirect:/careers#apply-form";
     }
 
     @PostMapping("/contact/submit")
@@ -65,7 +65,7 @@ public class HomeController {
                 "success",
                 "Your inquiry has been received!");
 
-        return "redirect:/contact";
+        return "redirect:/contact#contact-form";
     }
 
 }
