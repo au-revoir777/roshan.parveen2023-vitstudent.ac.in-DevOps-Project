@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -75,7 +76,8 @@ public class HomeController {
 
    
     @PostMapping("/careers/apply")
-    public String apply(@ModelAttribute CareerApplicationDto dto) {
+    public String apply(@ModelAttribute CareerApplicationDto dto,
+        RedirectAttributes redirectAttributes) {
 
         CareerApplication application =
                 new CareerApplication(
@@ -91,7 +93,7 @@ public class HomeController {
 
     
     @PostMapping("/contact/submit")
-    public String submit(@ModelAttribute ContactInquiryDto dto) {
+    public String submit(@ModelAttribute ContactInquiryDto dto, RedirectAttributes redirectAttributes) {
 
     ContactInquiry inquiry =
             new ContactInquiry(
