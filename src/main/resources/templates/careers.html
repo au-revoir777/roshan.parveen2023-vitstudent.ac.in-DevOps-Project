@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | ABC Technologies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>ABC Technologies</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/careers" class="active">Careers</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <h2>Join Our Growing Team</h2>
+            <p>Build meaningful technological solutions alongside creative professionals who love what they do.</p>
+        </section>
+
+        <section class="perks-section">
+            <h2>Perks of Working at ABC</h2>
+            <p class="section-subtitle">We invest in our people so they can do their best work sustainably.</p>
+            
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <span class="perk-icon">🌍</span>
+                    <h4>Remote First</h4>
+                    <p>Work from wherever you're most productive—fully distributed teams across multiple time zones.</p>
+                </div>
+                <div class="perk-card">
+                    <span class="perk-icon">🩺</span>
+                    <h4>Premium Health</h4>
+                    <p>Comprehensive health, dental, and mental wellness coverage tailored for you and your family.</p>
+                </div>
+                <div class="perk-card">
+                    <span class="perk-icon">📚</span>
+                    <h4>Learning Stipend</h4>
+                    <p>$2,000 annual budget for courses, conferences, tech books, and professional certifications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-section">
+            <h2>Current Open Positions</h2>
+            <p class="section-subtitle">Explore open paths and take the next leap in your engineering career.</p>
+            
+            <div class="jobs-container">
+                
+                <div class="job-row">
+                    <div class="job-info">
+                        <h3>Senior Full Stack Engineer (Java / Vue.js)</h3>
+                        <p class="job-meta">Engineering &bull; Remote &bull; Full-Time</p>
+                    </div>
+                    <div class="job-action">
+                        <a href="#apply-form" class="btn-job">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="job-row">
+                    <div class="job-info">
+                        <h3>Cloud Infrastructure Architect</h3>
+                        <p class="job-meta">DevOps &bull; Hybrid (NYC/Remote) &bull; Full-Time</p>
+                    </div>
+                    <div class="job-action">
+                        <a href="#apply-form" class="btn-job">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="job-row">
+                    <div class="job-info">
+                        <h3>Data Scientist / ML Engineer</h3>
+                        <p class="job-meta">Analytics &bull; Remote &bull; Full-Time</p>
+                    </div>
+                    <div class="job-action">
+                        <a href="#apply-form" class="btn-job">Apply Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="apply-form" class="apply-section">
+            <div class="form-wrapper">
+                <h2>Submit an Application</h2>
+                <p>Don't see a precise fit? Send over your resume anyway—we're constantly looking for exceptional individuals.</p>
+                
+                <form action="#" method="POST" class="careers-form">
+                    <div class="form-row-split">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Desired Position</label>
+                        <select id="position" name="position">
+                            <option value="general">General Application / Future Consideration</option>
+                            <option value="fullstack">Senior Full Stack Engineer</option>
+                            <option value="cloud">Cloud Infrastructure Architect</option>
+                            <option value="data">Data Scientist / ML Engineer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume">Resume / CV Link</label>
+                        <input type="url" id="resume" name="resume" placeholder="https://linkedin.com/in/yourprofile or Dropbox Link" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>ABC Technologies</h3>
+                <p>Building tomorrow's enterprise software solutions today.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ABC Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

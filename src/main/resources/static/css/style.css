@@ -463,3 +463,650 @@ footer {
         margin-left: 20px;
     }
 }
+/* ==========================================================================
+   10. Services Page Specific Styles
+   ========================================================================== */
+
+/* Enhanced Detailed Service Cards Layout */
+.services-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.detailed-card {
+    background-color: var(--card-bg);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border-top: 4px solid #cbd5e1;
+    transition: var(--transition);
+}
+
+.detailed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -5px rgba(0,0,0,0.08);
+    border-top-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.detailed-card h3 {
+    color: var(--dark-bg);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.detailed-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Feature Checklists */
+.service-features {
+    list-style: none;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.service-features li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Pricing Section Matrix Styling */
+.pricing-section {
+    background-color: #f8fafc;
+}
+
+.pricing-table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto; /* Handles horizontal mobile overflow safely */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    background-color: var(--card-bg);
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pricing-table th {
+    background-color: #f1f5f9;
+    vertical-align: bottom;
+}
+
+/* Table Header Tiers text adjustments */
+.tier-name {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--dark-bg);
+    font-weight: 700;
+}
+
+.tier-price {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
+.tier-price small {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Focus Styling for Recommended Options */
+.pricing-table th.highlighted-tier {
+    background-color: #edf2f7;
+    position: relative;
+}
+
+.pop-tag {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+.pricing-table td:first-child {
+    font-weight: 600;
+    color: var(--dark-bg);
+    background-color: #fafafa;
+}
+
+/* Table Inner Buttons */
+.btn-table {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #cbd5e1;
+    color: var(--text-main);
+    border-radius: 4px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn-table:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-table.active-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.btn-table.active-btn:hover {
+    background-color: #0052a3;
+    border-color: #0052a3;
+}
+
+/* Mobile Screen Specific Rules */
+@media (max-width: 768px) {
+    .pricing-table th, .pricing-table td {
+        padding: 1rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .tier-price {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==========================================================================
+   11. Careers Page Specific Styles
+   ========================================================================== */
+
+/* Perks Grid */
+.perks-section {
+    background-color: #f1f5f9;
+}
+
+.perks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.perk-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.perk-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.perk-card h4 {
+    color: var(--dark-bg);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.perk-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Active Open Positions Rows */
+.jobs-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.job-row {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border-left: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.job-row:hover {
+    border-left-color: var(--primary-color);
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.job-info h3 {
+    color: var(--dark-bg);
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.job-meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.btn-job {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #e2e8f0;
+    color: var(--dark-bg);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-job:hover {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+}
+
+/* Form Styling Architecture */
+.apply-section {
+    background-color: #edf2f7;
+}
+
+.form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.form-wrapper h2 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.form-wrapper p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.careers-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-row-split {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+}
+
+.form-group input, 
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fff;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* Tablet Layout Adaptation */
+@media (max-width: 768px) {
+    .job-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .form-row-split {
+        flex-direction: column;
+    }
+    
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   12. Contact Page Specific Styles
+   ========================================================================== */
+
+.contact-section {
+    background-color: #f1f5f9;
+}
+
+.contact-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Info Column Panel (Left Sidebar) */
+.contact-info-panel {
+    flex: 1 1 400px;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.contact-info-panel h3 {
+    font-size: 1.8rem;
+    color: var(--text-white);
+}
+
+.panel-desc {
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.info-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-meta-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 6px;
+    line-height: 1;
+}
+
+.info-text-group h5 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.info-text-group p,
+.info-text-group a {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.info-text-group a:hover {
+    color: var(--text-white);
+    text-decoration: underline;
+}
+
+/* Operational Hours Component Widget */
+.hours-widget {
+    border-top: 1px solid #334155;
+    padding-top: 2rem;
+}
+
+.hours-widget h4 {
+    margin-bottom: 1rem;
+    color: var(--text-white);
+    font-size: 1.1rem;
+}
+
+.hours-widget ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.hours-widget li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.closed-status {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* Form Panel Structure (Right Area) */
+.contact-form-panel {
+    flex: 2 1 600px;
+    padding: 3.5rem;
+    background-color: var(--card-bg);
+}
+
+.contact-form-panel h3 {
+    font-size: 1.8rem;
+    color: var(--dark-bg);
+    margin-bottom: 2rem;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inquiry-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    resize: vertical;
+    transition: var(--transition);
+}
+
+.inquiry-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.contact-submit-btn {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    padding: 0.9rem 2.5rem;
+}
+
+/* Responsive Execution Blocks */
+@media (max-width: 968px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .contact-info-panel, 
+    .contact-form-panel {
+        padding: 2rem;
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   13. Gallery Page Specific Styles
+   ========================================================================== */
+
+.gallery-section {
+    background-color: #f8fafc;
+}
+
+/* 3-Column Responsive Masonry-Style Flex Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Outer Containers */
+.gallery-item-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Aspect Ratio Image Container Placeholders */
+.gallery-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Keeps boxes perfectly proportioned across screen widths */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dynamic CSS Gradients to mimic real photography assets */
+.project-bg { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+.office-bg  { background: linear-gradient(135deg, #10b981 0%, #047857 100%); }
+.mobile-bg  { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); }
+.event-bg   { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); }
+.data-bg    { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); }
+.team-bg    { background: linear-gradient(135deg, #64748b 0%, #334155 100%); }
+
+/* Categorization Badges */
+.gallery-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark-bg);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Text Content blocks beneath placeholder containers */
+.gallery-item-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.gallery-item-info h4 {
+    color: var(--dark-bg);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.gallery-item-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Smart Mobile Adjustments */
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Stacks completely flat on narrow mobile viewports */
+        gap: 1.5rem;
+    }
+}

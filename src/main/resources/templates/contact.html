@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ABC Technologies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>ABC Technologies</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/careers">Careers</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <h2>Get In Touch</h2>
+            <p>Have a question or looking to start a new software project? Let's build something exceptional together.</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-wrapper">
+                
+                <div class="contact-info-panel">
+                    <h3>Contact Information</h3>
+                    <p class="panel-desc">Reach out directly through traditional channels or visit our corporate office space.</p>
+                    
+                    <div class="info-meta-list">
+                        <div class="info-meta-item">
+                            <span class="info-icon">📍</span>
+                            <div class="info-text-group">
+                                <h5>Corporate HQ</h5>
+                                <p>100 Innovation Blvd, Suite 400<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+
+                        <div class="info-meta-item">
+                            <span class="info-icon">✉️</span>
+                            <div class="info-text-group">
+                                <h5>Email Support</h5>
+                                <p><a href="mailto:hello@abctechnologies.com">hello@abctechnologies.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-meta-item">
+                            <span class="info-icon">📞</span>
+                            <div class="info-text-group">
+                                <h5>Direct Line</h5>
+                                <p>+1 (555) 019-2834</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hours-widget">
+                        <h4>Business Hours</h4>
+                        <ul>
+                            <li><span>Monday - Friday:</span> <span>9:00 AM - 6:00 PM EST</span></li>
+                            <li><span>Saturday:</span> <span>10:00 AM - 2:00 PM EST</span></li>
+                            <li><span>Sunday:</span> <span class="closed-status">Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel">
+                    <h3>Send a Message</h3>
+                    <form action="#" method="POST" class="inquiry-form">
+                        <div class="form-row-split">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="contactEmail" placeholder="john.doe@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiryType">What can we help you with?</label>
+                            <select id="inquiryType" name="inquiryType">
+                                <option value="sales">New Project Consultation / Sales</option>
+                                <option value="support">Technical Core Support</option>
+                                <option value="partnership">Strategic Partnerships</option>
+                                <option value="other">General Administrative Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Detail the scope of your project or inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary contact-submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>ABC Technologies</h3>
+                <p>Building tomorrow's enterprise software solutions today.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ABC Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
