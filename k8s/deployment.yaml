@@ -12,20 +12,14 @@ spec:
       app: website
 
   template:
-
     metadata:
       labels:
         app: website
-
     spec:
       containers:
-
-      - name: website
-
-        image: website:latest
-
-        imagePullPolicy: Always
-
-        ports:
-
-        - containerPort: 8081
+        - name: website
+          image: website:v2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+            - containerPort: 9090

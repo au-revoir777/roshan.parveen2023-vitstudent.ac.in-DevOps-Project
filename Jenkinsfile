@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "website"
-        IMAGE_TAG = "latest"
+        IMAGE_TAG = "v2"
     }
 
     stages {
@@ -83,6 +83,7 @@ pipeline {
                 echo "Deploying application to Kubernetes..."
                 bat 'kubectl apply -f k8s/deployment.yaml'
                 bat 'kubectl apply -f k8s/service.yaml'
+                bat 'kubectl rollout restart deployment/website'
             }
         }
 
